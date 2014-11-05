@@ -21,27 +21,36 @@ var app = {
     if (typeof cordova.plugins.locationManager === 'undefined') {
       alert("window.locationManager has not been defined!");
     }
-    alert("Device rdy!");
-    //app.scanForBeacons();
+    alert("Device ready!");
+    app.scanForBeacons();
 },
 
 scanForBeacons: function() {
   var ourBeacons = [
-    {identifier:"test", uuid:"636f3f8f-6491-4bee-95f7-d8cc64a863b5", minor:"0", major:"0", },
+    {identifier:"test", uuid:"636f3f8f-6491-4bee-95f7-d8cc64a863b5", minor:"0", major:"0" },
   ]
 
-  var delegate = locationManager.delegate.implement({
-    didDetermineStateForRegion: function (pluginResult) {
-      //console.log('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
+  var delegate = locationManager.delegate.implement(
+    {
+      didDetermineStateForRegion: function (pluginResult) {
+        //console.log('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
+      },
+
+      didStartMonitoringForRegion: function (pluginResult) {
+      //console.log('didStartMonitoringForRegion:', pluginResult);
     },
 
-  didStartMonitoringForRegion: function (pluginResult) {
-    //console.log('didStartMonitoringForRegion:', pluginResult);
-  },
-
-  didRangeBeaconsInRegion: function (pluginResult) {
-    // This is where the magic happens
-    alert("Beacon detected!");
+      didRangeBeaconsInRegion: function (pluginResult) {
+      // This is where the magic happens
+      if (pluginResult.beacons.length != 0)
+        {
+          var bcnName = pluginResult.region.identifier
+          alert("Beacon detected: " + bcnName);
+        }
+      else
+        {
+          alert("nothing found");
+        }
   }
 });
 locationManager.setDelegate(delegate);
