@@ -27,7 +27,7 @@ var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(identifier, 
 ```
 ### Delegate to the plugin
 ```
-var delegate = locationManager.delegate.implement({code here});
+TODO
 ```
 
 # Notes
