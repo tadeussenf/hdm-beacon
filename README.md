@@ -21,13 +21,14 @@ var minor = 1000; // optional, defaults to wildcard if left empty
 var major = 5; // optional, defaults to wildcard if left empty
 ```
 
+### Delegate actions to the plugin
+```
+var delegate = locationManager.delegate.implement({code here});
+```
+
 ### Initalise BeaconRegion
 ```
 var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(identifier, uuid, major, minor); // throws an error if the parameters are not valid
-```
-### Delegate to the plugin
-```
-var delegate = locationManager.delegate.implement({code here});
 ```
 
 # Notes
