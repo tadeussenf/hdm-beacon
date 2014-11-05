@@ -35,8 +35,9 @@ Tadeus Senf's test beacon UUID: 636f3f8f-6491-4bee-95f7-d8cc64a863b5
 
 ## create a Beacon on your machine using VirtualBox
 Install bluez 5, ubuntu 14.10 is using bluez 4. ppa:vidplace7/bluez5
-
+```
 sudo hciconfig hci0 up
 sudo hciconfig hci0 leadv 3
 sudo hciconfig hci0 noscan
 sudo hcitool -i hci0 cmd 0x08 0x0008 1E 02 01 1A 1A FF 4C 00 02 15 63 6F 3F 8F 64 91 4B EE 95 F7 D8 CC 64 A8 63 B5 00 00 00 00 C8 00
+```
