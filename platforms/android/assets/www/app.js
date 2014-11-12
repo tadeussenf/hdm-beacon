@@ -27,7 +27,8 @@ var app = {
 
 scanForBeacons: function() {
   var ourBeacons = [
-    {identifier:"test", uuid:"636f3f8f-6491-4bee-95f7-d8cc64a863b5", minor:"0", major:"0" },
+    //{identifier:"test", uuid:"636f3f8f-6491-4bee-95f7-d8cc64a863b5", major:"0", minor:"0" },
+    {identifier:"beacon-inside1", uuid:"f0018b9b-7509-4c31-a905-1a27d39c003c", major:"37471", minor:"23614" },
   ]
 
   var delegate = locationManager.delegate.implement(
