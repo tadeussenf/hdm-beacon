@@ -37,6 +37,7 @@ C:\Users\rly\Documents\GitHub\hdm-beacon\platforms\android\assets\www\res \
 C:\Users\rly\Documents\GitHub\hdm-beacon\platforms\android\assets\www\spec \
 C:\Users\rly\Documents\GitHub\hdm-beacon\platforms\android\assets\www\spec.html \
 C:\Users\rly\Documents\GitHub\hdm-beacon\platforms\android\assets\www\css\index.css \
+C:\Users\rly\Documents\GitHub\hdm-beacon\platforms\android\assets\www\img\logo-200.png \
 C:\Users\rly\Documents\GitHub\hdm-beacon\platforms\android\assets\www\img\logo.png \
 C:\Users\rly\Documents\GitHub\hdm-beacon\platforms\android\assets\www\js\index.js \
 C:\Users\rly\Documents\GitHub\hdm-beacon\platforms\android\assets\www\plugins\com.unarin.cordova.beacon \

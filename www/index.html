@@ -27,16 +27,27 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>HdM Beacon</title>
     </head>
     <body>
+
         <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+            <h1>HdM Beacon</h1>
+
+            <div class="hidden-div" id="default">
+              <p>Welcome!</p>
             </div>
+
+            <div class="hidden-div" id="beacon1">
+              <p>identifier:"beacon1", uuid: "f0018b9b-7509-4c31-a905-1a27d39c003c", major:"37471", minor:"23614"</p>
+            </div>
+
+            <div class="hidden-div" id="beacon2">
+              <p>identifier:"beacon2", uuid:"f0018b9b-7509-4c31-a905-1a27d39c003c", major:"14895", minor:"36879"</p>
+            </div>
+
         </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <!-- <script type="text/javascript" src="js/index.js"></script> -->
         <script type="text/javascript" src="app.js"></script>
