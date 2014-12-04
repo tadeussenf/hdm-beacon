@@ -32,7 +32,6 @@ app.ourBeacons =
     if (typeof cordova.plugins.locationManager === 'undefined') {
       alert("window.locationManager has not been defined!");
     }
-    alert("Device ready!");
     app.scanForBeacons();
 }
 
@@ -52,19 +51,12 @@ app.ourBeacons =
       // This is where the magic happens
       if (pluginResult.beacons.length != 0)
         {
-          // var BeaconList = pluginResult.beacons;
-          //
-          // BeaconList.sort(function(a,b){
-          //   return b.rssi - a.rssi
-          // })
-
           for (var i in pluginResult.beacons) {
             var beacon = pluginResult.beacons[i];
             var pageid = pluginResult.region.identifier;
 
             if (beacon.proximity == "ProximityImmediate")
               {
-                //alert("Found: " + beacon.minor);
                 app.showPage(pageid);
                 return
               }
@@ -74,21 +66,10 @@ app.ourBeacons =
                 return
               }
           }
-
-          //alert(BeaconList[0].minor);
-          //alert(BeaconList[0].rssi);
-          //app.currentPage = BeaconList[0];
-          //app.showPage(BeaconList[0]);
-
-          //var pageid = pluginResult.region.identifier
-          //alert("Beacon detected: " + pageid);
-          //app.showPage(pageid)
-          //app.currentPage = "pageid"
           return
         }
       else
         {
-          //alert("empty");
           app.showPage("default")
           return
         }
