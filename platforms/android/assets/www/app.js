@@ -58,6 +58,7 @@ app.ourBeacons =
             if (beacon.proximity == "ProximityImmediate")
               {
                 app.showPage(pageid);
+                app.stopScan();
                 return
               }
 
@@ -83,6 +84,9 @@ for (var index in app.ourBeacons) {
 
   var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(unit.identifier, unit.uuid, unit.major, unit.minor);
 
+  // get Authorization on iOS8+
+  cordova.plugins.locationManager.requestAlwaysAuthorization()
+
   locationManager.startMonitoringForRegion(beaconRegion)
     .fail(console.error)
     .done();
@@ -93,12 +97,28 @@ for (var index in app.ourBeacons) {
 }
 }
 
-  app.showPage = function(pageid) {
-    document.getElementById(pageid).style.display = "block"
+app.showPage = function(pageid) {
+  document.getElementById(pageid).style.display = "block"
 
-    if (app.currentPage != pageid)
-      {
-        document.getElementById(app.currentPage).style.display = "none"
-      }
-    app.currentPage = pageid;
+  if (app.currentPage != pageid)
+    {
+      document.getElementById(app.currentPage).style.display = "none"
+    }
+  app.currentPage = pageid;
+}
+
+app.stopScan = function() {
+  for (var index in app.ourBeacons) {
+    var unit = app.ourBeacons[index];
+
+    var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(unit.identifier, unit.uuid, unit.major, unit.minor);
+
+    locationManager.stopMonitoringForRegion(beaconRegion)
+      .fail(console.error)
+      .done();
+
+    cordova.plugins.locationManager.stopRangingBeaconsInRegion(beaconRegion)
+      .fail(console.error)
+      .done();
   }
+}
