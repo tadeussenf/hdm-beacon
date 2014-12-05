@@ -1,5 +1,7 @@
 var app = {};
 
+
+// list our Beacons here
 app.ourBeacons =
 [
   {identifier:"beacon1", uuid:"f0018b9b-7509-4c31-a905-1a27d39c003c", major:"37471", minor:"23614" },
