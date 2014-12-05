@@ -32,15 +32,15 @@ app.ourBeacons =
     if (typeof cordova.plugins.locationManager === 'undefined') {
       alert("window.locationManager has not been defined!");
     }
-    app.scanForBeacons();
+    //app.initBeacons();
 }
 
-  app.scanForBeacons = function() {
+  app.startScan = function() {
 
   var delegate = locationManager.delegate.implement(
     {
       didDetermineStateForRegion: function (pluginResult) {
-        //console.log('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
+      //console.log('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
       },
 
       didStartMonitoringForRegion: function (pluginResult) {
@@ -58,7 +58,7 @@ app.ourBeacons =
             if (beacon.proximity == "ProximityImmediate")
               {
                 app.showPage(pageid);
-                app.stopScan();
+                app.stopRanging();
                 return
               }
 
@@ -78,23 +78,38 @@ app.ourBeacons =
 });
 
 locationManager.setDelegate(delegate);
-
-for (var index in app.ourBeacons) {
-  var unit = app.ourBeacons[index];
-
-  var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(unit.identifier, unit.uuid, unit.major, unit.minor);
-
-  // get Authorization on iOS8+
-  cordova.plugins.locationManager.requestAlwaysAuthorization()
-
-  locationManager.startMonitoringForRegion(beaconRegion)
-    .fail(console.error)
-    .done();
-
-  cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
-    .fail(console.error)
-    .done();
+app.startRanging();
 }
+
+app.startRanging = function() {
+    // get Authorization on iOS8+
+    cordova.plugins.locationManager.requestAlwaysAuthorization();
+
+  // start Ranging for each Beacon in ourBeacons
+  for (var index in app.ourBeacons) {
+    var unit = app.ourBeacons[index];
+
+    beaconRegion = new cordova.plugins.locationManager.BeaconRegion(unit.identifier, unit.uuid, unit.major, unit.minor);
+
+    cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
+      .fail(console.error)
+      .done();
+    }
+    console.log("Scan started");
+}
+
+// stop Ranging for each Beacon in ourBeacons
+app.stopRanging = function() {
+  for (var index in app.ourBeacons) {
+    var unit = app.ourBeacons[index];
+
+    beaconRegion = new cordova.plugins.locationManager.BeaconRegion(unit.identifier, unit.uuid, unit.major, unit.minor);
+
+    cordova.plugins.locationManager.stopRangingBeaconsInRegion(beaconRegion)
+      .fail(console.error)
+      .done();
+    }
+    console.log("Scan stopped");
 }
 
 app.showPage = function(pageid) {
@@ -105,20 +120,4 @@ app.showPage = function(pageid) {
       document.getElementById(app.currentPage).style.display = "none"
     }
   app.currentPage = pageid;
-}
-
-app.stopScan = function() {
-  for (var index in app.ourBeacons) {
-    var unit = app.ourBeacons[index];
-
-    var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(unit.identifier, unit.uuid, unit.major, unit.minor);
-
-    locationManager.stopMonitoringForRegion(beaconRegion)
-      .fail(console.error)
-      .done();
-
-    cordova.plugins.locationManager.stopRangingBeaconsInRegion(beaconRegion)
-      .fail(console.error)
-      .done();
-  }
 }
