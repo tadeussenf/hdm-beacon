@@ -7,7 +7,7 @@ app.ourBeacons =
 ]
 
   app.currentPage = "default"
-  pageid = "default"
+  //app.pageid = "default"
 
   app.initialize = function() {
     // Important to stop scanning when page reloads/closes!
@@ -53,13 +53,13 @@ app.ourBeacons =
         {
           for (var i in pluginResult.beacons) {
             var beacon = pluginResult.beacons[i];
-            var pageid = pluginResult.region.identifier;
+            app.pageid = pluginResult.region.identifier;
 
             if (beacon.proximity == "ProximityImmediate")
               {
-                app.showPage(pageid);
+                //app.showPage(pageid);
                 app.stopRanging();
-                return
+                return;
               }
 
             else
@@ -69,9 +69,11 @@ app.ourBeacons =
           }
           return
         }
+        
       else
         {
-          app.showPage("default")
+          app.pageid = "default"
+          //app.showPage("default")
           return
         }
   }
@@ -79,6 +81,7 @@ app.ourBeacons =
 
 locationManager.setDelegate(delegate);
 app.startRanging();
+return app.pageid;
 }
 
 app.startRanging = function() {
@@ -120,4 +123,9 @@ app.showPage = function(pageid) {
       document.getElementById(app.currentPage).style.display = "none"
     }
   app.currentPage = pageid;
+}
+
+app.showAlert = function() {
+  var beaconid = app.startScan();
+  alert(beaconid);
 }
