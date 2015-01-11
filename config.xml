@@ -2,7 +2,7 @@
 <widget id="com.tadeussenf.hdmbeacon" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>HdM-Beacon</name>
     <description>
-        HdM-Beacon BackEnd Application
+        HdM-Beacon Application
     </description>
     <author email="cs191@hdm-stuttgart.de" href="">
         Tadeus Senf

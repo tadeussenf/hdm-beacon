@@ -5,5 +5,5 @@
 -keep class com.radiusnetworks.ibeacon.service.IBeaconService { <init>(...); }
 
 # view AndroidManifest.xml #generated:6
--keep class com.tadeussenf.hdmbeacon.HelloWorld { <init>(...); }
+-keep class com.tadeussenf.hdmbeacon.CordovaApp { <init>(...); }
 
