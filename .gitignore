@@ -1,7 +1,7 @@
 #################
 ## Eclipse
 #################
-platforms/
+platforms/*
 
 *.pydevproject
 .project

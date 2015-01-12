@@ -1,0 +1,37 @@
+<!DOCTYPE html>  
+<html ng-app="someApp">  
+<head>  
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>  
+</head>  
+<body>  
+    <div ng-controller="someController">  
+        <div>property 0: <b>{{ someModel.0 }}</b></div>  
+        <div>property 1: <b>{{ someModel.1 }}</b></div>  
+        <div>property 2: <b>{{ someModel.2 }}</b></div>  
+        <div>property 3: <b>{{ someModel.3 }}</b></div>  
+        <div>{{ someInfo }}</div>  
+        <div>{{ someMoreInfo }}</div>  
+        <div>{{ someModelSerialized }}</div>  
+    </div>  
+  
+    <script type="text/javascript">  
+        angular.module('someApp', [])  
+            .factory('someFactory', [function() {  
+               var jsonString = $http.get('/data.json')
+                    
+                return function() {  
+                    // use fromJson to convert a JSON string to an object https://docs.angularjs.org/api/ng/function/angular.fromJson  
+                    return angular.fromJson(jsonString);  
+                };   
+            }])  
+            .controller('someController', ['$scope', 'someFactory',function($scope,someFactory) {  
+                var result;  
+                result = someFactory();  
+                $scope.someModel = result;  
+                $scope.someInfo = Object.prototype.toString.call(result);                  
+                $scope.someMoreInfo = Object.prototype.toString.call(window.JSON);   
+                $scope.someModelSerialized = angular.toJson(result); // https://docs.angularjs.org/api/ng/function/angular.toJson                  
+            }]);  
+    </script>  
+</body>  
+</html> 

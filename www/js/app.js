@@ -1,9 +1,11 @@
 var app = {};
 
+
+// list our Beacons here
 app.ourBeacons =
 [
-  {identifier:"beacon1", uuid:"f0018b9b-7509-4c31-a905-1a27d39c003c", major:"37471", minor:"23614" },
-  {identifier:"beacon2", uuid:"f0018b9b-7509-4c31-a905-1a27d39c003c", major:"14895", minor:"36879" }
+  {identifier:"1", uuid:"f0018b9b-7509-4c31-a905-1a27d39c003c", major:"37471", minor:"23614" },
+  {identifier:"2", uuid:"f0018b9b-7509-4c31-a905-1a27d39c003c", major:"14895", minor:"36879" }
 ]
 
   app.currentPage = "default"
@@ -21,7 +23,6 @@ app.ourBeacons =
 
   app.bindEvents = function() {
     document.addEventListener('deviceready', app.onDeviceReady, false)
-    app.showPage(app.currentPage)
   },
 
   app.onDeviceReady = function() {
@@ -53,11 +54,12 @@ app.ourBeacons =
         {
           for (var i in pluginResult.beacons) {
             var beacon = pluginResult.beacons[i];
-            var pageid = pluginResult.region.identifier;
+            var beaconid = pluginResult.region.identifier;
 
             if (beacon.proximity == "ProximityImmediate")
               {
-                app.showPage(pageid);
+                app.stopScan();
+                angular.element(document.getElementById('radarCtrl')).scope().foundBeacon(beaconid);
                 return
               }
 
@@ -70,7 +72,8 @@ app.ourBeacons =
         }
       else
         {
-          app.showPage("default")
+          //app.stopScan();
+          //angular.element(document.getElementById('radarCtrl')).scope().foundBeacon(0);
           return
         }
   }
@@ -83,22 +86,21 @@ for (var index in app.ourBeacons) {
 
   var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(unit.identifier, unit.uuid, unit.major, unit.minor);
 
-  locationManager.startMonitoringForRegion(beaconRegion)
-    .fail(console.error)
-    .done();
-
   cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
     .fail(console.error)
     .done();
 }
 }
 
-  app.showPage = function(pageid) {
-    document.getElementById(pageid).style.display = "block"
+app.stopScan = function() {
+  for (var index in app.ourBeacons) {
+    var unit = app.ourBeacons[index];
 
-    if (app.currentPage != pageid)
-      {
-        document.getElementById(app.currentPage).style.display = "none"
-      }
-    app.currentPage = pageid;
-  }
+    beaconRegion = new cordova.plugins.locationManager.BeaconRegion(unit.identifier, unit.uuid, unit.major, unit.minor);
+
+    cordova.plugins.locationManager.stopRangingBeaconsInRegion(beaconRegion)
+      .fail(console.error)
+      .done();
+    }
+    console.log("Scan stopped");
+}
