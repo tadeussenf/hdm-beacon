@@ -1,0 +1,24 @@
+<ion-view view-title="Browse">
+  <ion-content class="liste">
+
+
+
+        
+
+<input
+     ng-model="search"
+    type="search"
+    class="form-control scrollable-header"
+    placeholder="Suchen.." />
+
+	<ion-list padding >
+		<div class="padding">
+	        <ion-item ng-repeat="article in availableGroups | filter:search"  href="#/app/single/{{article.id}}">	{{article.name}} <i class="icon ion-chevron-right pull-right "></i>
+	        </ion-item>
+	    </div>
+    </ion-list>
+
+
+          
+  </ion-content>
+</ion-view>

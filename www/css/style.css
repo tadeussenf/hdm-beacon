@@ -1,0 +1,151 @@
+/* Empty. Add your own CSS if you like */
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.menu-left {
+	background: url(../img/bg_menu.jpg) no-repeat center center;
+background-size: 100% 100%;
+
+}
+
+.bar-header {
+}
+
+.menu .bar .title { margin:0px}
+.menu .bar .title div { padding:0 15px; font-weight: bold;}
+
+.menu-left .item-complex ,
+ .menu-left  .item-content,
+  .menu-left .item-radio,
+   .menu-left  .item-content 
+
+{background: none !important; padding-right: 15px;
+font-size: 14px;}
+
+   
+.menu .bar.bar-stable {
+	background: none !important;
+}
+
+
+.bar.bar-stable {	border-color: #000937 !important;
+}
+
+.menu .bar.bar-stable h1 { text-align: left; font-size: 18px; height:53px; border-bottom: 1px solid #2e5d8b;
+}
+
+.menu .bar  {border-bottom:#000937 1px solid !important}
+
+
+
+.menu a {color:#fff;}
+.menu * {color:#fff !important;}
+
+.current{
+  background: #ddd !important;
+}
+
+
+
+.pull-right {
+	float: right;;
+}
+
+.menu-content .view-container ion-content {
+background: url(../img/bg_home.jpg) no-repeat center center;
+background-size: 100% 100%;
+}
+
+
+.bar {
+	height:54px;
+}
+
+.has-header {
+	top: 54px;
+}
+
+.bar .title {
+	line-height: 54px;
+}
+
+.bar .title + .buttons {
+	top: 10px;
+}
+
+.bar.bar-stable {background: #0265ff !important; color: #fff;}
+
+.bar.bar-stable .title,
+.bar-stable .button.button-clear { color: #fff;}
+
+
+
+.menu .item {
+   border-bottom: 1px solid #000937 ;
+
+border-top: 1px solid #2e5d8b ;
+margin-bottom: 1px;
+padding:0;
+}
+
+.menu  a:hover,
+.menu  a:focus,
+.menu  a:active {
+	background: #00234b !important
+}
+
+
+.menu a {
+	padding: 12px !important;
+}
+
+.menu .item:last-child {
+border-bottom: 1px solid #2e5d8b;
+margin-bottom: 0px;
+}.menu .item:first-child {
+border-top: none;
+}
+
+
+.menu .list {
+border-bottom: 1px solid #00234b;
+border-top: 0px solid #000937;
+
+}
+
+.menu .list {
+
+padding:1px 0 0 ; margin:0;
+}
+
+
+.item-complex .item-content,
+ .item-radio .item-content, 
+ .item {background: none !important; border-left: 0; border-right: 0;}
+
+
+
+
+.liste input {padding: 5px 5px 5px 25px;}
+
+.liste .icon {font-weight: bold; font-size: 16px}
+
+
+
+
+.single .item {margin: 0; padding: 0; border:0;}
+
+
+.single .nav>li {
+display: table-cell;
+width: 1%;
+}
+
+
+.navBarBtn  {font-size: 22px;}
+.right-buttons {margin-right: 12px;}
+
+
+.carousel-control { z-index: 10000;}
