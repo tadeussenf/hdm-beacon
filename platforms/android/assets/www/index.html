@@ -1,85 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>MediaNight iBeacon</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
-<!--	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="dist/css/mobile-angular-ui-hover.css" />
-    <link rel="stylesheet" href="dist/css/mobile-angular-ui-base.css" />
-    <link rel="stylesheet" href="dist/css/mobile-angular-ui-desktop.css" />
-    <link rel="stylesheet" href="demo.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-animate.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-touch.min.js"></script>
-    <script src="http://gg-dev.de/usage1/demo/js/service/angular-local-storage.min"></script>
-      <script src="dist/js/mobile-angular-ui.js"></script>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
 
-      <script src="http://mobileangularui.com/dist/js/mobile-angular-ui.gestures.min.js"></script>
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
 
-      <script src="http://malsup.github.io/jquery.cycle.all.js"></script>
-    <script src="demo.js"></script>
+    <!-- ionic/angularjs js -->
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="lib/ibeacon-chris/app.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <!--<script src="lib/ngstorage/ngStorage.min.js"></script>-->
+<script src='lib/lodash/dist/lodash.min.js'></script>
+<script src='lib/angular-google-maps/dist/angular-google-maps.min.js'></script>
+<script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
   </head>
 
-
-  <body
-    ng-app="beaconApp"
-    ng-controller="MainController"
-    >
-
-    <!-- Sidebars -->
-    <div ng-include="'sidebar.html'"
-            ui-track-as-search-param='true'
-            class="sidebar sidebar-left"></div>
-
-
-
-    <div class="app">
-
-      <!-- Navbars -->
-
-      <div class="navbar navbar-app navbar-absolute-top">
-        <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
-        MediaNight iBeacon
-        </div>
-        <div class="btn-group pull-left">
-          <div ui-toggle="sidebarLeft" class="btn sidebar-toggle">
-            <i class="fa fa-bars"></i>
-          </div>
-        </div>
-        <div class="btn-group pull-right" ui-yield-to="navbarAction">
-
-
-    <a href="#/ausstellerliste" class="btn"><i class="fa fa-search"></i></a>
-
-        </div>
-      </div>
-
-
-      <!-- App Body -->
-      <div class="app-body" ng-class="{loading: loading}">
-        <div ng-show="loading" class="app-content-loading">
-          <i class="fa fa-spinner fa-spin loading-spinner"></i>
-        </div>
-        <div class="app-content">
-          <ng-view></ng-view>
-        </div>
-      </div>
-
-    </div><!-- ~ .app -->
-
-    <div ui-yield-to="modals"></div>
-
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-
+  <body ng-app="starter" onunload="" class="platform-android platform-cordova platform-webview">
+    <ion-nav-view></ion-nav-view>
   </body>
 </html>

@@ -1,106 +1,150 @@
-var app = {};
+// Ionic Starter App
 
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.controllers' is found in controllers.js
+angular.module('starter', ['ui.bootstrap.tpls',
+'ionic', "ui.bootstrap",'starter.controllers', 'LocalStorageModule', 'ngRoute', 'uiGmapgoogle-maps'])
 
-// list our Beacons here
-app.ourBeacons =
-[
-  {identifier:"1", uuid:"f0018b9b-7509-4c31-a905-1a27d39c003c", major:"37471", minor:"23614" },
-  {identifier:"2", uuid:"f0018b9b-7509-4c31-a905-1a27d39c003c", major:"14895", minor:"36879" }
-]
-
-  app.currentPage = "default"
-  pageid = "default"
-
-  app.initialize = function() {
-    // Important to stop scanning when page reloads/closes!
-    window.addEventListener('beforeunload', function(e)
-    {
-      //iBeacon.stopScan();
-    });
-
-    app.bindEvents();
-  },
-
-  app.bindEvents = function() {
-    document.addEventListener('deviceready', app.onDeviceReady, false)
-  },
-
-  app.onDeviceReady = function() {
-    //console.log('cordova: ' + JSON.stringify(cordova, null, "\t"));
-    //window.LocationManager = cordova.plugins.LocationManager;
-    window.locationManager = cordova.plugins.locationManager;
-
-    if (typeof cordova.plugins.locationManager === 'undefined') {
-      alert("window.locationManager has not been defined!");
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
-    app.scanForBeacons();
-}
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
 
-  app.scanForBeacons = function() {
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
 
-  var delegate = locationManager.delegate.implement(
-    {
-      didDetermineStateForRegion: function (pluginResult) {
-        //console.log('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
-      },
+  .state('app', {
+    url: "/app",
+    abstract: true,
+    templateUrl: "templates/menu.html"
+  })
 
-      didStartMonitoringForRegion: function (pluginResult) {
-      //console.log('didStartMonitoringForRegion:', pluginResult);
-    },
 
-      didRangeBeaconsInRegion: function (pluginResult) {
-      // This is where the magic happens
-      if (pluginResult.beacons.length != 0)
-        {
-          for (var i in pluginResult.beacons) {
-            var beacon = pluginResult.beacons[i];
-            var beaconid = pluginResult.region.identifier;
 
-            if (beacon.proximity == "ProximityImmediate")
-              {
-                app.stopScan();
-                angular.element(document.getElementById('radarCtrl')).scope().foundBeacon(beaconid);
-                return
-              }
+      
+  .state('app.radar', {
+    url: "/radar",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/radar.html",
+            controller: "radarCtrl"
 
-            else
-              {
-                return
-              }
-          }
-          return
+      }
+    }
+  })
+
+  .state('app.fav', {
+    url: "/fav",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/fav.html",
+        controller: "favListCtrl"
+      }
+    }
+  })
+    .state('app.liste', {
+      url: "/liste",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/liste.html",
+          controller: "ausstellerListeCtrl"
         }
-      else
-        {
-          //app.stopScan();
-          //angular.element(document.getElementById('radarCtrl')).scope().foundBeacon(0);
-          return
+      }
+    })
+    .state('app.maps', {
+      url: "/maps",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/maps.html"
         }
-  }
+      }
+    })
+    .state('app.anreisen', {
+      url: "/anreisen",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/anreisen.html",
+          controller: "anreisenCtrl"
+        }
+      }
+    })
+
+
+    .state('app.parken', {
+      url: "/parken",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/parken.html",
+          controller: "parkCtrl"
+        }
+      }
+    })
+
+    .state('app.about', {
+      url: "/about",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/about.html"
+        }
+      }
+    })
+
+    .state('app.impressum', {
+      url: "/impressum",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/impressum.html"
+        }
+      }
+    })
+    .state('app.datenschutz', {
+      url: "/datenschutz",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/datenschutz.html"
+        }
+      }
+    })
+
+
+  .state('app.single', {
+    url: "/single/:id",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/single.html",
+        controller: 'singleCtrl'
+      }
+    }
+  });
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/radar');
+})
+
+.directive('disableAnimation', function($animate){
+
+  // Bugfix from:https://github.com/angular-ui/bootstrap/issues/1350#issuecomment-34595075
+
+
+    return {
+        restrict: 'A',
+        link: function($scope, $element, $attrs){
+            $attrs.$observe('disableAnimation', function(value){
+                $animate.enabled(!value, $element);
+            });
+        }
+    }
+
+
 });
 
-locationManager.setDelegate(delegate);
-
-for (var index in app.ourBeacons) {
-  var unit = app.ourBeacons[index];
-
-  var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(unit.identifier, unit.uuid, unit.major, unit.minor);
-
-  cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
-    .fail(console.error)
-    .done();
-}
-}
-
-app.stopScan = function() {
-  for (var index in app.ourBeacons) {
-    var unit = app.ourBeacons[index];
-
-    beaconRegion = new cordova.plugins.locationManager.BeaconRegion(unit.identifier, unit.uuid, unit.major, unit.minor);
-
-    cordova.plugins.locationManager.stopRangingBeaconsInRegion(beaconRegion)
-      .fail(console.error)
-      .done();
-    }
-    console.log("Scan stopped");
-}

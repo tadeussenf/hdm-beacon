@@ -1,85 +1,54 @@
 [
   {
     "id":0,
-    "name":"Frau Holle",
-    "subtitle":"subtitle0",
-    "shortDesc":"shortDesc0",
-    "longDesc":"longDesc0",
-    "projectType":"projectType0",
-    "fieldOfStudy":"fieldOfStudy0",
-    "team":"team0",
-    "development":"development0",
-    "contact":"contact0 ... irgendwann mit html code. :-D"
-  }, {
+    "name":"MedFlight",
+    "img":
+    [
+      "img/medflight/Medflight_500x500px.png",
+      "img/medflight/screen1.jpeg",
+      "img/medflight/screen2.jpeg",
+      "img/medflight/screen3.jpeg",
+      "img/medflight/screen4.jpeg",
+      "img/demoContent/demoslider.gif"
+    ],
+  "shortDesc":"Die App MedFlight ruft eine Drone, welche schnell und unaufhaltsam die erforderliche Notfallmedizin eines chronisch kranken Patienten liefert.",
+  "longDesc":"Allergien, Diabetes, Epilepsie und Asthma sind Beispiele für chronische Krankheiten, die in diversen Situation lebensgefährlich sein können. Das Anfordern von Hilfe ist nicht immer möglich und verunsicherte Beobachter wissen oft nicht, was zu tun ist. Oft tragen die Betroffenen die relevante Notfallmedizin nicht bei sich. Deshalb haben wir die MedFlight App entwickelt, in welcher die Patienten oder Helfer die zwingend erforderliche Medizin innerhalb von zwei Klicks im Falle eines prekären Notfalls anforden können. Daraufhin ist MedFlight in der Lage, eine Drohne mit der notwendigen Arznei auf optimale Weise loszuschicken, die ein Leben retten wird.",
+  "team":"Andreas Krappitz <br> Can Kattwinkel <br> Stefan Tetzlaff <br> Gabriel Cacic <br> Eduard Ermanntraut",
+  "development":"<div class='row'><div class='col-xs-6'><ul><li><strong>Software</strong></li></div><div class='col-xs-6'><ul><li>AngularJS, Ionic, HTML, JavaScript, CSS</li>",
+  "contact":"<strong>Ansprechpartner:</strong> Gabriel Cacic <br> <strong>E-Mail:</strong>  gc009@hdm-stuttgart.de <br>"
+  },
+
+{
   "id":1,
-  "name":"Hans im Glück",
-  "subtitle":"subtitle1",
-  "shortDesc":"shortDesc1",
-  "longDesc":"longDesc1",
-  "projectType":"projectType1",
-  "fieldOfStudy":"fieldOfStudy1",
-  "team":"team1",
-  "development":"development1",
-  "contact":"contact1"
-},
-  {
-    "id":2,
-    "name":"Eduard und der böse Wolf",
-    "subtitle":"subtitle2",
-    "shortDesc":"shortDesc2",
-    "longDesc":"longDesc2",
-    "projectType":"projectType2",
-    "fieldOfStudy":"fieldOfStudy2",
-    "team":"team2",
-    "development":"development2",
-    "contact":"contact2"
-  },
-  {
-    "id":3,
-    "name":"Tadeus und Spongebob",
-    "subtitle":"subtitle3",
-    "shortDesc":"shortDesc3",
-    "longDesc":"longDesc3",
-    "projectType":"projectType3",
-    "fieldOfStudy":"fieldOfStudy3",
-    "team":"team3",
-    "development":"development3",
-    "contact":"contact3"
-  },
-  {
-    "id":4,
-    "name":"Die Bremer Stadtmusikanten ft. Wilczek",
-    "subtitle":"subtitle4",
-    "shortDesc":"shortDesc4",
-    "longDesc":"longDesc4",
-    "projectType":"projectType4",
-    "fieldOfStudy":"fieldOfStudy4",
-    "team":"team4",
-    "development":"development4",
-    "contact":"contact4"
-  },
-  {
-    "id":5,
-    "name":"Der gestiefelte Kater",
-    "subtitle":"subtitle5",
-    "shortDesc":"shortDesc5",
-    "longDesc":"longDesc5",
-    "projectType":"projectType5",
-    "fieldOfStudy":"fieldOfStudy5",
-    "team":"team5",
-    "development":"development5",
-    "contact":"contact5"
-  },
-  {
-    "id":6,
-    "name":"Das tapfere Schneiderlein",
-    "subtitle":"subtitle6",
-    "shortDesc":"shortDesc6",
-    "longDesc":"longDesc6",
-    "projectType":"projectType6",
-    "fieldOfStudy":"fieldOfStudy6",
-    "team":"team6",
-    "development":"development6",
-    "contact":"contact6"
+  "name":"Pinovo",
+  "img":
+  [
+    "img/pinovo/0.png",
+    "img/pinovo/1.JPG",
+    "img/pinovo/4.png"
+  ],
+  "shortDesc":"Wir helfen (Einzel-)Händlern beim Schritt in die digitale Welt. Dabei entwickeln wir einen WLAN Captive Portal für den Einzelhandel, mit dem Kunden selbsttätig Produktinformationen, Lagerbestände und Bestellmöglichkeiten eines Produkts über ihr Smartphone oder Tablet abrufen können.",
+  "longDesc":"pinovo hilft (Einzel-)Händlern, mit Hilfe modernster Technologie, beim Schritt in die digitale Welt. Wir entwickeln unser Produkt pinovo mit einem Raspberry Pi, auf dem ein Webserver mit einem Captive Portal installiert ist. Mit dem Raspberry Pi ist ein WLAN-Adapter verbunden, der als Hotspot konfiguriert ist. Sobald sich ein Nutzer mit dem WLAN verbindet, wird das Captive Portal angezeigt. Durch die Verwendung des Captive Portals, sehen Kunden den Händlershop als Web-App. Wir entwickeln diese Web-App, um sicherzustellen, dass alle Smartphones das Captive Portal ohne Fehler verwenden können. Außerdem müssen Kunden keine weitere App herunterladen. Ist der gewünschte Artikel auf Lager und kann sofort mitgenommen werden? Oder kann das Produkt dem Kunden direkt nach Hause geschickt werden? Das alles ist kein Problem mit pinovo. Auf diesem Captive Portal können mittels Produktnummern oder Barcodes Informationen abgerufen werden, wie z.B. Verfügbarkeit im Lager, Farbvarianten, Größen etc. Bei Verfügbarkeit im Lager kann über das Portal angefordert werden, dass ein Mitarbeiter das Produkt zum Kunden bringt. Auf Wunsch bietet das Portal eine Bestellmöglichkeit mit Heim- oder Shop-Lieferung an. Durch diesen Self Service ist eine höhere Kundenzufriedenheit zu erwarten.",
+  "team":"Nicole Krentz <br> Christoph Strauß <br> Denise Schmidt <br> Janine Holl",
+  "development":"<div class='row'><div class='col-xs-6'><ul> <li><strong>Software</strong></li> <li><strong>Programmierung</strong></li> <li><strong>Aufnahmetechnik</strong></li></ul> </div><div class='col-xs-6'><ul> <li>HTML, CSS, PHP</li> <li>Adobe Premiere, Photoshop, InDesign</li> <li>Panasonic GH3/GH4</li></ul></div></div>",
+  "contact":"<strong>Ansprechpartner:</strong> Nicole Krentz <br> <strong>E-Mail:</strong>  info@pinovo.de <br> <strong>Webseite:</strong> http://pinovo.de <br>"},
+
+{
+  "id":2,
+  "name":"iBeacon",
+  "img":
+  [
+    "img/beacon/wall.jpg",
+    "img/beacon/boot.jpg",
+    "img/beacon/radar.jpg",
+    "img/beacon/single.jpg",
+    "img/beacon/menu.jpg",
+    "img/beacon/list.jpg"
+  ],
+  "shortDesc":"Unsere Smartphone-App kombiniert Realität und virtuelle Welt auf der MediaNight. Besuchern der MediaNight erhalten automatisch weiterführende Informationen zu dem Stand an dem sie sich gerade aufhalten. Interessante Projekte lassen sich individuell abspeichern und können nach Ende der Veranstaltung wieder aufgerufen werden.",
+  "longDesc":"Basierend auf der iBeacon Technologie wurde eine App realisiert die Informationen abhängig vom Standort des Nutzers anzeigt. Dies ermöglicht eine Vielzahl von Anwendungsfällen, beispielsweise auf Veranstaltungen wie Messen oder in Museen. Auf der MediaNight der HdM kommt die App nun erstmals zum Einsatz und liefert neben interessanten Informationen zu dem jeweils nächsten (messe) Stand auch nützliche Funktionen wie beispielsweise das Merken von besuchten Projekten. Neben weiteren Funktionen auf der Anwenderseite bieten die Daten die die App generiert auch einblicke in das Nutzerverhalten, so können beispielsweise Heatmaps basiernd auf den App Requests erstellt werden.",
+  "team":"Can Kattwinkel <br> Christoph Strauß <br> Eduard Ermanntraut",
+  "development":"<div class='row'><div class='col-xs-6'><ul> <li><strong>Software</strong></li> </div><div class='col-xs-6'><ul> <li>AngularJS, Ionic, HTML, JavaScript, CSS</li>",
+  "contact":" <strong>Ansprechpartner:</strong> Can Kattwinkel <br> <strong>E-Mail:</strong>  ck115@hdm-stuttgart.de <br> "
   }
 ]

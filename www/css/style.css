@@ -19,12 +19,12 @@ background-size: 100% 100%;
 .menu-left .item-complex ,
  .menu-left  .item-content,
   .menu-left .item-radio,
-   .menu-left  .item-content 
+   .menu-left  .item-content
 
 {background: none !important; padding-right: 15px;
 font-size: 14px;}
 
-   
+
 .menu .bar.bar-stable {
 	background: none !important;
 }
@@ -122,7 +122,7 @@ padding:1px 0 0 ; margin:0;
 
 
 .item-complex .item-content,
- .item-radio .item-content, 
+ .item-radio .item-content,
  .item {background: none !important; border-left: 0; border-right: 0;}
 
 
@@ -144,8 +144,70 @@ width: 1%;
 }
 
 
-.navBarBtn  {font-size: 22px;}
+.navBarBtn  {font-size: 32px !important; margin-top: -3px; display: block;}
 .right-buttons {margin-right: 12px;}
 
 
 .carousel-control { z-index: 10000;}
+
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {height: 20ex;}
+
+
+.angular-google-map-container { height:100%; }
+
+
+
+.angular-google-map {height: 100%;}
+
+
+
+i {font-style: italic;}
+
+
+
+.bar .button.button-clear {padding-top:6px;}
+
+
+
+
+
+
+#radarCtrl h4 {font-weight: bold; color:#0265ff;}
+#radarCtrl .blue {font-weight: bold;}
+.big {font-size:26px; padding-right: 20px;}
+
+.blue {padding-top:4px;}
+.btn .blue:hover {color:#fff;}
+
+.blue {background:#0265ff; color:#fff; text-align: center;  border-radius: 5px; border:none;
+}
+
+.button:hover {color:#fff;}
+
+.button.active, .button.activated {background:#0265ff; color:#fff;}
+
+
+.row {width:auto;}
+
+.nav-tabs {background: #0265ff;}
+.nav-tabs * {color:#fff !important; background: #0265ff !important; border: 0 !important;}
+
+.nav-tabs .activated {}
+
+.nav-tabs li.active {}
+.nav-tabs li.active a {background: rgba(0, 68, 174, 0.73)!important}
+
+.single h3 {margin-top:0px;}
+.single p {margin:1em 0;}
+
+.padding.main {margin:20px 0;}
+
+
+ .tabset p {padding:10px 10px;}
+
+
+.nav-tabs.nav-justified>li>a {margin-bottom:0;}
+
+.nav-tabs.nav-justified {padding: 0 8px;}
+
+.nav-tabs.nav-justified>li>a {border-bottom-right-radius: 0; border-bottom-left-radius: 0;}

@@ -1,16 +1,16 @@
 <ion-view view-title="{{articles.name}}">
     <ion-nav-buttons side="right">
-      <i ng-click="makeFav(articles.id)" class=" navBarBtn icon ion-heart"></i>
-      <i ng-click="rmFav(articles.id)" class=" navBarBtn icon ion-heart-broken"></i>
+      <i ng-click="makeFav(articles.id)" class=" navBarBtn icon ion-heart" ng-show="!fav"></i>
+      <i ng-click="rmFav(articles.id)" class="navBarBtn icon ion-heart-broken" ng-show="fav"></i>
     </ion-nav-buttons>
   <ion-content class="single">
 
   <div>
     <carousel interval="myInterval" disable-animation="true">
-      <slide ng-repeat="slide in slides" active="slide.active">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
+      <slide ng-repeat="img in articles.img" active="slide.active">
+        <img ng-src="{{img}}" style="margin:auto;">
         <div class="carousel-caption">
-       <!--   
+       <!--
              ausgeblendet
           <h4>Slide {{$index}}</h4>
           <p>{{slide.text}}</p>
@@ -24,18 +24,26 @@
 
 
 
-dasd
 
+<div class="padding main">
           <h3 class="project-title">{{articles.name}}</h3>
-          {{articles.shortDesc}}
-
-  <tabset justified="true">
-    <tab heading="Details"> {{articles.longDesc}}</tab>
-    <tab heading="Team">{{articles.team}}</tab>
-    <tab heading="Umsetzung">{{articles.development}}</tab>
-    <tab heading="Kontakt">{{articles.contact}}</tab>
-  </tabset>
-
+          <p>{{articles.shortDesc}}</p>
+</div>
+        <div class="tabset">
+          <tabset justified="true" >
+            <tab heading="Details">
+                <p ng-bind-html="articles.longDesc"></p>
+            </tab>
+            <tab heading="Team">
+                <p ng-bind-html="articles.team"></p>
+            </tab>
+            <tab heading="Umsetzung">
+                <p ng-bind-html="articles.development"></p>
+            </tab>
+            <tab heading="Kontakt">
+                <p ng-bind-html="articles.contact"></p>
+            </tab>
+          </tabset>
+        </div>
   </ion-content>
 </ion-view>
-
