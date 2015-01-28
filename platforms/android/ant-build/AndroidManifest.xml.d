@@ -1,2 +1,2 @@
-C:\Users\rly\Downloads\beacon-latest\platforms\android\ant-build\AndroidManifest.xml : \
-C:\Users\rly\Downloads\beacon-latest\platforms\android\AndroidManifest.xml \
+C:\Users\rly\Documents\GitHub\hdm-beacon\platforms\android\ant-build\AndroidManifest.xml : \
+C:\Users\rly\Documents\GitHub\hdm-beacon\platforms\android\AndroidManifest.xml \
