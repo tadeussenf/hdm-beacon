@@ -61,7 +61,7 @@ angular.module('starter.controllers', [])
     };
 
     $scope.click = function(){
-      alert("test")
+      //alert("test")
     }
 
 })
