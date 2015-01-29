@@ -35,7 +35,7 @@
 
 {
   "id":2,
-  "name":"iBeacon",
+  "name":"iBeacon für Messen",
   "img":
   [
     "img/beacon/wall.jpg",
@@ -46,7 +46,7 @@
     "img/beacon/list.jpg"
   ],
   "shortDesc":"Unsere Smartphone-App kombiniert Realität und virtuelle Welt auf Messen. Messebesucher erhalten automatisch weiterführende Informationen zu dem Stand an dem sie sich gerade aufhalten. Interessante Anbieter lassen sich individuell abspeichern und können nach Ende der Veranstaltung wieder aufgerufen werden.",
-  "longDesc":"Basierend auf der iBeacon Technologie wurde eine App realisiert die Informationen abhängig vom Standort des Nutzers anzeigt. Dies ermöglicht eine Vielzahl von Anwendungsfällen, beispielsweise auf Veranstaltungen wie Messen oder in Museen. Auf der MediaNight der HdM kommt die App nun erstmals zum Einsatz und liefert neben interessanten Informationen zu dem jeweils nächsten Messestand auch nützliche Funktionen wie beispielsweise das Merken von besuchten Projekten.",
+  "longDesc":"Basierend auf der Apples iBeacon Technologie wurde eine App realisiert die Informationen abhängig vom Standort des Nutzers anzeigt. Dies ermöglicht eine Vielzahl von Anwendungsfällen, beispielsweise auf Veranstaltungen wie Messen oder in Museen. Auf der MediaNight der HdM kommt die App nun erstmals zum Einsatz und liefert neben interessanten Informationen zu dem jeweils nächsten Messestand auch nützliche Funktionen wie beispielsweise das Merken von besuchten Projekten.",
   "team":"Can Kattwinkel <br> Christoph Strauß <br> Eduard Ermanntraut",
   "development":"<div class='row'><div class='col-xs-6'><ul> <li><strong>Software</strong></li> </div><div class='col-xs-6'><ul> <li>AngularJS, Ionic, HTML, JavaScript, CSS</li>",
   "contact":" <strong>Ansprechpartner:</strong> Can Kattwinkel <br> <strong>E-Mail:</strong>  ck115@hdm-stuttgart.de <br> "
